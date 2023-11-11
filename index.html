@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>TODO LIST APP </title>
+		<link rel="stylesheet" href="style.css" />
+		<script src="https://kit.fontawesome.com/34162fcf4d.js" crossorigin="anonymous"></script>
+		<script defer src="taskList.js"></script>
+		<script defer src="module.js"></script>
+		<script defer src="script.js"></script>
+	</head>
+	<body>
+		<!-- Container Start -->
+		<div class="container">
+			
+			<!-- Application Heading Start -->
+			<div class="app">
+				<!--  Heading Start -->
+				<div class="heading">
+					<div class="hoverDisplay">
+						<h3 id="name">Your Todo List</h3>
+						<i class="fa-solid fa-sun"></i>
+						<i class="fa-solid fa-moon" id="hide"></i>
+						<!--Date at the end of container-->
+						<h3 id="today">Saturday, Nov 12</h3> 
+					</div>
+				</div>
+				<!-- Heading Section End -->
+				<!-- Todo App Input Start -->
+				<div class="inputBox">
+					<input type="text" name="task" id="task" placeholder="Drop Your Today's Tasks"/>
+					<div class="submit">
+						<i class="fa-solid fa-plus" id="taskSubmit"></i>
+					</div>
+				</div>
+				<!-- Todo App Input End -->
+				<!-- Upper Tabs Start -->
+				<div class="tabs-box">
+					<div class="tabs" id="all">All</div>
+					<div class="tabs" id="incomplete">Not Done</div>
+					<div class="tabs" id="completed">Done</div>
+				</div>
+				<!-- Upper Tabs End -->
+				<div class="scroll">
+					<!-- Tab Content Template Start -->
+					<div class="tab1 content">
+						<div class="task">
+							<div class="checkbox">
+								<i class="fa-solid fa-circle-check" id="check"></i>
+							</div>
+							<div class="text">
+								<p></p>
+							</div>
+							<div class="delete">
+								<i class="fa-solid fa-trash-alt" id="delete"></i>
+							</div>
+						</div>
+					</div>
+					<!-- Tab Content Template End -->
+					<!-- Tabs 2 3 Content Start -->
+					<div class="tab2 content"></div>
+					<div class="tab3 content"></div>
+					<!-- Tabs 2 3 Content End -->
+				</div>
+				<!-- Lower Tabs Start -->
+				<div class="taskBar tabs-box">
+					<div class="tabs" id="complete-all">Done All Tasks</div>
+					<div class="tabs" id="taskCount">0 Tasks Left</div>
+					<div class="tabs" id="clear-completed">Clear Done Tasks</div>
+				</div>
+				<!-- Lower Tabs End -->
+			</div>
+			<!-- Application End -->
+			
+		</div>
+		<!-- Container End -->
+	</body>
+</html>

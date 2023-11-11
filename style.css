@@ -1,0 +1,314 @@
+/*---Medial query ----*/
+/* --------------------------------590px-------------------------------- */
+@media only screen and (max-height: 590px) {
+	div.container {
+		min-height: 106vh;
+	}
+	div.app {
+		margin-top: 1%;
+	}
+}
+
+
+/* ----------------General Styling---------------- */
+:root {
+	--bgcolor: #dc8624;
+	--app-bgcolor: rgb(66, 190, 66);
+	--text-color: white;
+}
+* {
+	margin: 0%;
+	padding: 0%;
+	box-sizing: border-box;
+	user-select: none;
+	-webkit-user-drag: none;
+	-webkit-user-select: none;
+}
+/* ----------------Body---------------- */
+body {
+	background-color: var(--bgcolor);
+}
+/* ----------------Container---------------- */
+div.container {
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
+}
+div.container ::-webkit-scrollbar {
+	display: none;
+	overflow: hidden;
+}
+
+/* ----------------Application---------------- */
+div.app {
+	background: var(--app-bgcolor);
+	box-shadow: 0px 0px 10px 1px var(--app-bgcolor);
+	backdrop-filter: blur(7px);
+	-webkit-backdrop-filter: blur(7px);
+	border-radius: 15px;
+	border: 1px solid var(--app-bgcolor);
+	z-index: 2;
+	width: 27%;
+	max-width: 374px;
+	min-width: 308px;
+	height: 560px;
+	margin-top: 3%;
+	transition: all 0.2s linear;
+	overflow: hidden;
+}
+div.app:hover {
+	background: rgba(135, 129, 129, 0.27);
+}
+/* ----------------Application heading---------------- */
+div.app >  div.hoverDisplay {
+	width: 100%;
+	height: -webkit-fill-available;
+	transition: all 0.45s linear;
+}
+
+
+div.app > div.heading .hoverDisplay .fa-sun,
+div.app > div.heading .hoverDisplay .fa-moon {
+	position: relative;
+	margin-top: 8px;
+	color: var(--text-color);
+	text-shadow: 1px 1px 3px rgba(0, 0, 0, 1);
+	cursor: pointer;
+	display: flex;
+}
+.fa-moon{
+	float: right;
+}
+.fa-sun {
+	float: left;
+}
+
+div.app > div.heading .hoverDisplay #today,
+div.app > div.heading .hoverDisplay #name {
+	position: absolute;
+	top: 90%;
+	left: 4%;
+	font-size: 1.3rem;
+	color: var(--text-color);
+	text-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
+	font-family: "Source Sans Pro", "Arial", sans-serif;
+	word-spacing: 0.15rem;
+	display: flex;
+}
+div.app > div.heading > div.hoverDisplay #today {
+	animation: bottomToTop 0.5s linear;
+	display: block;
+}
+/* ----------------Animation---------------- */
+@keyframes bottomToTop {
+	0% {
+		transform: translateY(-50px);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0px);
+		opacity: 1;
+	}
+}
+/* ----------------Hover Display---------------- */
+div.app > div.heading .hoverDisplay #name {
+	top: 5%;
+	font-size: 2rem;
+}
+
+/* ----------------Input Task Box Container---------------- */
+div.app div.inputBox {
+	width: 100%;
+	height: 40px;
+	padding-top: 18%;  
+	display: flex;
+}
+div.app div.inputBox input {
+	width: 85%;
+	background: rgb(219, 211, 211);
+	outline: none;
+	border: 1px solid white;
+	padding: 5px;
+	padding-left: 12px;
+	font-size: 1.2rem;
+	font-family: "Source Sans Pro", "Arial", sans-serif;
+	height: 40px;
+	display: flex;
+}
+div.app div.inputBox input:focus {
+	outline: none;
+}
+div.app div.inputBox input::placeholder {
+	color: black;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+	text-align: center;
+	padding: 5px;
+	padding-left: 20px;
+	font-size: 1.15rem;
+	font-family: monospace;
+}
+div.app div.inputBox .submit {
+	width: 15%;
+	height: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-bottom: 1px solid #ececec;
+	border: none;
+}
+div.app div.inputBox .submit i {
+	font-size: 1.5rem;
+	color: #ededed;
+	transition: all 0.1s linear;
+}
+div.app div.inputBox .submit i:hover {
+	color: #55fca0;
+	cursor: pointer;
+}
+/* ----------------Tabs Container---------------- */
+div.tabs-box {
+	width: 100%;
+	height: 10px;
+	margin-top: 18%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	border: none;
+}
+div.tabs-box > div.tabs {
+	width: 33%;
+	padding: 5%;
+	height: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	color: var(--text-color);
+	font-family: "Source Sans Pro", "Arial", sans-serif;
+	font-size: 0.9rem;
+	transition: all 0.1s linear;
+}
+div.tabs-box > div.tabs:hover {
+	background: rgba(255, 255, 255, 0.5);
+	background: black;
+	cursor: pointer;
+}
+div.tabs-box > div.tabs.active {
+	color: rgb(230, 230, 230);
+	cursor: initial;
+	background: rgba(0, 0, 0, 0.04);
+}
+/* ----------------Tabs Content Container---------------- */
+.content {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	align-items: flex-start;
+	margin-top: 6%;
+	overflow-y: scroll;
+	height: 200px;
+}
+.scroll {
+	overflow: hidden;
+}
+.content::-webkit-scrollbar {
+	display: none;
+	overflow: hidden;
+}
+/* ----------------Tab 1, Tab 2, Tab 3---------------- */
+.tab1 {
+	animation: fade 0.6s linear;
+}
+.tab2,
+.tab3 {
+	display: none;
+	animation: fade 0.6s linear;
+}
+/* ----------------Animation---------------- */
+@keyframes fade {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+/* ----------------Task Template---------------- */
+.task {
+	width: 100%;
+	height: fit-content;
+	display: flex;
+	display: none;
+	justify-content: space-between;
+	align-items: center;
+	transition: all 0.1s linear;
+}
+.task:hover {
+	background: rgba(0, 0, 0, 0.03);
+	cursor: pointer;
+}
+.task .checkbox,
+.task .delete {
+	width: 10%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: all 0.1s linear;
+	cursor: pointer;
+	font-size: 1.1rem;
+	color: rgba(0, 0, 0, 0.7);
+}
+.task .checkbox:hover,
+.task .edit:hover {
+	color: #afffd3;
+}
+.task .delete:hover {
+	color: red;
+}
+.task .text {
+	width: 70%;
+	overflow: hidden;
+	word-break: break-all;
+	font-size: 0.95rem;
+	font-weight: 900;
+	font-family: "Source Sans Pro", "Arial", sans-serif;
+	word-spacing: 0.2rem;
+	letter-spacing: 0.001rem;
+	line-height: 1.3rem;
+	padding: 10px;
+	color: rgba(0, 0, 0, 0.75);
+}
+/* ----------------Line Through Class---------------- */
+.line-through {
+	text-decoration: line-through;
+	text-decoration-color: var(--text-color);
+	text-decoration-thickness: 2px;
+	-moz-text-decoration-color: var(--text-color);
+	-moz-text-decoration-thickness: 2px;
+}
+/* ----------------Delete Animation---------------- */
+.delete-animation {
+	transform: translateY(8rem) rotateZ(0deg);
+	opacity: 0;
+	transition: all 0.5s linear;
+}
+/* ----------------Lower Tabs---------------- */
+div.taskBar {
+	color: var(--text-color);
+}
+div.taskBar > div.tabs:hover {
+	background: black;
+	cursor: pointer;
+	color: rgb(230, 230, 230);
+}
+#taskCount:hover {
+	cursor: initial;
+	color: var(--text-color);
+}
+
