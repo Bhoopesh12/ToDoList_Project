@@ -212,7 +212,7 @@ div.tabs-box > div.tabs.active {
 	align-items: flex-start;
 	margin-top: 6%;
 	overflow-y: scroll;
-	height: 200px;
+	height: 250px;
 }
 .scroll {
 	overflow: hidden;
@@ -301,6 +301,7 @@ div.tabs-box > div.tabs.active {
 /* ----------------Lower Tabs---------------- */
 div.taskBar {
 	color: var(--text-color);
+	margin-top: 30px;
 }
 div.taskBar > div.tabs:hover {
 	background: black;
