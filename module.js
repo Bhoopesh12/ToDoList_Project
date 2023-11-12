@@ -227,7 +227,7 @@ let todoApp = (() => {
 			}
 		}
 		//If the target is the "CompleteAll-Tab" button, then mark all the Tasks as Done
-		if (target.id === "complete-all") {
+		if (target.id === "done-all") {
 			let taskList = getLocalStorage("taskList");
 			if (taskList.length > 0) {
 				taskList.forEach((task) => {
@@ -239,7 +239,7 @@ let todoApp = (() => {
 			}
 		}
 		//If the target is the "ClearCompleted-Tab" button, then clear all the completed Tasks
-		if (target.id === "clear-completed") {
+		if (target.id === "clear-done") {
 			let taskList = getLocalStorage("taskList");
 			taskList = taskList.filter((task) => task.completed === false);
 			if (taskList.length > 0) {
