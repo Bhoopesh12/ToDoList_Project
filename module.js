@@ -91,13 +91,13 @@ let todoApp = (() => {
 					upperTabs[0].classList.add("active");
 					//All Tasks
 					renderTabContent(taskList);
-				} else if (activeTab === "incomplete") {
-					//Highlights the "Incomplete" Tab
+				} else if (activeTab === "not_done") {
+					//Highlights the "not_done" Tab
 					upperTabs[1].classList.add("active");
-					//Incomplete Tasks
+					//Not Done Tasks
 					taskList = taskList.filter((task) => task.completed === false);
 					renderTabContent(taskList);
-				} else if (activeTab === "completed") {
+				} else if (activeTab === "done") {
 					//Highlights the "Complete" Tab
 					upperTabs[2].classList.add("active");
 					//Completed Tasks
@@ -148,7 +148,7 @@ let todoApp = (() => {
 		return JSON.parse(window.localStorage.getItem(taskList));
 	};
 	//----------------------------------------------------------------
-	//Function: Checks/Unchecks Off the Task & Marks it as Completed/Incomplete//
+	//Function: Checks/Unchecks Off the Task & Marks it as Completed/Not Done//
 	const taskCompletedToggle = (taskId) => {
 		const taskList = getLocalStorage("taskList");
 		taskList.forEach((task) => {
@@ -204,8 +204,8 @@ let todoApp = (() => {
 				return;
 			}
 		}
-		//If the target is the "Incomplete-Tab" button, then display the Content of the Tab
-		if (target.id === "incomplete") {
+		//If the target is the "Not Done-Tab" button, then display the Content of the Tab
+		if (target.id === "not_done") {
 			let taskList = getLocalStorage("taskList");
 			if (taskList === null) return;
 			taskList = taskList.filter((task) => task.completed === false);
@@ -215,8 +215,8 @@ let todoApp = (() => {
 				return;
 			}
 		}
-		//If the target is the "Completed-Tab" button, then display the Content of the Tab
-		if (target.id === "completed") {
+		//If the target is the "Done-Tab" button, then display the Content of the Tab
+		if (target.id === "done") {
 			let taskList = getLocalStorage("taskList");
 			if (taskList === null) return;
 			taskList = taskList.filter((task) => task.completed === true);
@@ -226,7 +226,7 @@ let todoApp = (() => {
 				return;
 			}
 		}
-		//If the target is the "CompleteAll-Tab" button, then mark all the Tasks as Completed
+		//If the target is the "CompleteAll-Tab" button, then mark all the Tasks as Done
 		if (target.id === "complete-all") {
 			let taskList = getLocalStorage("taskList");
 			if (taskList.length > 0) {
@@ -255,7 +255,7 @@ let todoApp = (() => {
 			const ele = target.parentNode.parentNode;
 			const id = ele.querySelector(".text p").id;
 			ele.classList.add("delete-animation");
-			//SetTimeout to delete the Task after sometime after the delete animation is completed
+			//SetTimeout to delete the Task after sometime after the delete animation is done
 			setTimeout(() => {
 				const ele = target.parentNode.parentNode;
 				const id = ele.querySelector(".text p").id;
@@ -267,7 +267,7 @@ let todoApp = (() => {
 					return;
 				}
 				let list = taskList.filter((task) => task.id !== Number(id));
-				//Remove the element after the animation is completed
+				//Remove the element after the animation is done
 				ele.addEventListener("transitionend", () => {
 					ele.remove();
 				});
