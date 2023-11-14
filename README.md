@@ -18,4 +18,4 @@ Technology Used in this project
 4. Hosting: Netlify
 5. For Repository: GitHub
 
-Hosting APP Link : https://bhoopesh-todo-list-app.netlify.app/
+Hosting APP Link: https://bhoopesh-todo-list-app.netlify.app/
